@@ -4,8 +4,50 @@
     <script src="env.js"></script>
     <script src="index.js"></script>
   </head>
-  <body onload="renderDynamicContent()">
-    <h1>Hello World</h1>
-    <div id="dynamic-content"></div>
+  <body>
+    <div>
+			<div>
+				<label>Enter First Number: </label>
+				<input type="number" name="" id="Text1">
+			</div>
+
+			<div>
+				<label>Enter Second Number: </label>
+				<input type="number" name="" id="Text2">
+			</div>
+
+			<div>
+				<label>Result: </label>
+				<input type="number" name="" id="textresult">
+			</div>
+
+			<div>
+				<button name="clickbtn" disabled>Display Result</button>
+			</div>
+		</div>
+
+    <script>
+      document.getElementById('Text1').addEventListener('blur', (e) => {
+				let firstNumber = Number(document.getElementById('Text1').value)
+				let secondNumber = Number(document.getElementById('Text2').value)
+				if(firstNumber && secondNumber) {
+					document.querySelector('button').disabled = false
+				}
+			})
+
+
+			document.getElementById('Text2').addEventListener('blur', (e) => {
+				let firstNumber = Number(document.getElementById('Text1').value)
+				let secondNumber = Number(document.getElementById('Text2').value)
+				if(firstNumber && secondNumber) {
+					document.querySelector('button').disabled = false
+				}
+			})
+			document.querySelector('button').addEventListener('click', () => {
+				let firstNumber = Number(document.getElementById('Text1').value)
+				let secondNumber = Number(document.getElementById('Text2').value)
+				document.getElementById('textresult').value = firstNumber+secondNumber
+			})
+    </script>
   </body>
 </html>
